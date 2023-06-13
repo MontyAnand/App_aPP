@@ -155,7 +155,7 @@ function Chat({ socket, username, room, prevData}) {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-      <MDBTextArea placeholder="wRITE..." id='typeText'
+      <MDBTextArea placeholder="Write here..." id='typeText'
         onChange={(e) => { setCurrentMessage(e.target.value); }}
         onKeyDownCapture={(event) => {
           if (event.key === "Enter" && sendMessage())
