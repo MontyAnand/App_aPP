@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Chat from "./chat";
 import Axios from 'axios';
 
-const socket = io.connect("http://localhost:3001");
+const socket = io.connect();
 
 function App() {
   const [prevData, setPrevData] = useState([]);
