@@ -73,8 +73,9 @@ function Chat({ socket, username, room, prevData}) {
   };
 
   useEffect(() => {
-    Axios.get("/users").then((response) => {
+    Axios.get("/users/").then((response) => {
       for(let i=0;i<response.data.length;i++){
+        if(response.data[i].room===room)
         setMessageList((list) => [...list, response.data[i]]);
       }
     });

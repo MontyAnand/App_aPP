@@ -26,8 +26,9 @@ app.get("/users", async (request, response) => {
 
   app.get("/users:Id",async(req,res)=>{
     const id = req.params.Id;
+    console.log(id);
     let query = {room:id};
-  let result = await userModel.find(query);
+  let result = await userModel.find({});
     try {
         res.send(result);
       } catch (error) {
