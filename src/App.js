@@ -3,8 +3,8 @@ import io from "socket.io-client";
 import React, { useEffect, useState } from "react";
 import Chat from "./chat";
 import Axios from 'axios';
-
-const socket = io();
+const URL = process.env.NODE_ENV === 'production' ? undefined : 'http://localhost:3001';
+const socket = io.connect(URL);
 
 function App() {
   const [prevData, setPrevData] = useState([]);
